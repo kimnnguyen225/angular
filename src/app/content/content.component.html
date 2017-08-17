@@ -1,0 +1,32 @@
+<div *ngIf='students.length !=0'>
+  <h4>The author of this is {{author}}</h4>
+
+  <div>
+        <label><input id='name' value='kim'/></label>
+        <label><input id='color' value='pink'></label>
+        <label><input id='number' value='9'/></label>
+        <button id='button'>Insert</button>
+  </div>
+
+  <div>
+      <table class='table'>
+        <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th class='text-right'>Number</th>
+            <th>Even/Odd</th>
+        </tr>
+        <tr *ngFor="let student of students">
+          <!-- <td id='name' (click)="getSelectedStudent(student)">{{student.name}}</td> -->
+          <td id='name>'>{{student.name}}</td>
+          <td id='color'>{{student.favColor}}</td>
+          <td class='text-right' id='number'>{{student.favNumber}}</td>
+          <td *ngIf='student.favNumber % 2 == 0'>Even</td>
+          <td *ngIf='student.favNumber % 2 != 0'>Odd</td>
+        </tr>
+        <tbody id='events'></tbody>
+      </table>
+  </div>
+  <!-- <button (click)="clickme()">Click me</button>
+  <button (click)="displaySelectedStudent()">Display student</button> -->
+</div>
